@@ -1,4 +1,4 @@
-﻿namespace Centric.fs.Demo
+﻿namespace Centric.fs.DemoConsoleApp
 
 module Model =
     open System
