@@ -1,9 +1,0 @@
-C:\Code\FSDemoApp\obj\Debug\DemoConsoleApp.fsprojResolveAssemblyReference.cache
-C:\Code\FSDemoApp\bin\Debug\DemoConsoleApp.exe.config
-C:\Code\FSDemoApp\bin\Debug\DemoConsoleApp.XML
-C:\Code\FSDemoApp\bin\Debug\DemoConsoleApp.exe
-C:\Code\FSDemoApp\bin\Debug\DemoConsoleApp.pdb
-C:\Code\FSDemoApp\bin\Debug\FSharp.Core.dll
-C:\Code\FSDemoApp\bin\Debug\FSharp.Core.xml
-C:\Code\FSDemoApp\obj\Debug\DemoConsoleApp.exe
-C:\Code\FSDemoApp\obj\Debug\DemoConsoleApp.pdb
