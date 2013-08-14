@@ -3,12 +3,6 @@
 module Model =
     open System
 
-    type GenderType =
-    | Unknown = 0
-    | Male = 1
-    | Female = 2
-    | Other = 3
-
     type AddressType =
     | Unknown = 0
     | Home = 1
@@ -21,6 +15,31 @@ module Model =
     | Work = 2
     | Mobile = 3
     | Other = 4
+
+    type SkillLevelType =
+    | Unknown = 0
+    | Beginner = 1
+    | Intermediate = 2
+    | Advanced = 3
+    | Expert = 4
+
+    type DifficultyType =
+    | Unknown = 0
+    | Easy = 1
+    | Average = 2
+    | Difficult = 3
+    | Extreme = 4
+
+    type ActivityType =
+    | Unknown = 0
+    | Delivery = 1
+    | PracticeManagement = 2
+    | BusinessDevelopment = 3
+    | Training = 4
+    | Interviews = 5
+    | BUMeetings = 6
+    | Coaching = 7
+    | PersonalDevelopment = 8
 
     type GeographicRegion =
     | State of string
@@ -57,8 +76,7 @@ module Model =
 
     type Demographics = {
         Id:Guid option
-        DateOfBirth:DateTime option
-        Gender:GenderType option
+        Title:string option
         Addresses:Address list option
         PhoneNumbers:PhoneNumber list option
     }
@@ -70,16 +88,54 @@ module Model =
         DemographicInfo:Demographics option
     }
 
-    type ProjectInfo = {
+    type Time = {
+        Hour:int16
+        Minute:int16
+        IsAM:bool
+    }
+
+    type TimeInterval = {
+        StartTime:Time
+        EndTime:Time option
+        ElapsedTime:decimal option
+    }
+
+    type Activity = {
+        Id:Guid option
+        Type:ActivityType
+        Summary:string
+        Descripiton:string option
+        Date:DateTime
+        Times:TimeInterval list
+        TotalTime:decimal option
+    }
+
+    type Skill = {
+        Id:Guid option
+        Summary:string
+        Description:string option
+        SkillLevel:SkillLevelType
+    }
+
+     type ProjectInfo = {
         Id:Guid option
         StartDate:DateTime
         EndDate:DateTime option
-        Contact:Person option
+        Contacts:Person list
+        Difficulty:DifficultyType
+        Role:string
+        Summary:string
+        Description:string option
+        Activities:Activity list
+        UtilizedSkills:Skill list
     }
 
     type Employee = {
-        Id:Guid
+        Id:Guid option
         Info:Person
         Projects:ProjectInfo list
+        PracticeManagment:Activity list
+        BusinessDevelopment:Activity list
+        Skills:Skill list
     }
 
